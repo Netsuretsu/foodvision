@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import CustomFileInput from "@/components/custom-file-input";
-import { getResult, predict } from "@/services";
+import { predict } from "@/services";
 import { useMutation } from "@tanstack/react-query";
 
 
