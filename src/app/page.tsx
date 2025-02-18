@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CustomFileInput from "@/components/custom-file-input";
-import { predict, getResult } from "@/services";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { predict } from "@/services";
+import { useMutation } from "@tanstack/react-query";
 
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
     }
   })
 
-  const create = (event?: any) => {
+  const create = (event?: React.FormEvent<HTMLFormElement>) => {
     if (event) {
       event.preventDefault();
     }

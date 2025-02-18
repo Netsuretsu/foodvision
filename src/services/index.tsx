@@ -14,8 +14,8 @@ export const getResult = async (filename: string) => {
         const response = await axios.get(`${API_URL}/result/${filename}`, options)
         // console.log('Response:', response.data);
         return response.data;
-    } catch (error: any) {
-        console.error('Error retrieving result:', error.msg || error);
+    } catch (error: unknown) {
+        console.error('Error retrieving result:', error || error);
         return []
     }
 }
@@ -37,8 +37,8 @@ export const predict = async (file: File) => {
         const response = await axios.post(`${API_URL}/predict`, formData, options)
         console.log('Response:', response.data);
         return response.data;
-    } catch (error: any) {
-        console.error('Error predicting:', error.msg || error);
+    } catch (error: unknown) {
+        console.error('Error predicting:', error || error);
         return []
     }
 }
