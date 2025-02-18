@@ -3,7 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ['foodvision-production.up.railway.app'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'foodvision-production.up.railway.app',
+        port: '', 
+        pathname: '/**',
+      },
+    ],
   },
 };
 
