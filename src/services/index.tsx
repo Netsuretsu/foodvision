@@ -23,6 +23,7 @@ export const getResult = async (filename: string) => {
 
 export const predict = async (file: File) => {
     try {
+        // console.log("API URL:", `${API_URL}/predict`);
 
         const formData = new FormData();
         formData.append("file", file);
@@ -35,7 +36,7 @@ export const predict = async (file: File) => {
             },
         };
         const response = await axios.post(`${API_URL}/predict`, formData, options)
-        console.log('Response:', response.data);
+        // console.log('Response:', response.data);
         return response.data;
     } catch (error: unknown) {
         console.error('Error predicting:', error || error);
