@@ -55,7 +55,7 @@ export default function Home() {
       console.error("Aucun fichier sélectionné");
       return;
     }
-
+    setPrediction(undefined);
     createMutation.mutate(file);
   };
 
@@ -72,7 +72,7 @@ export default function Home() {
         prediction && prediction.data.length > 0 &&
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center mt-4">
-            <span className="text-xl font-semibold text-blue-400">Prédiction</span>
+            <span className="text-xl font-semibold text-blue-400">Prediction</span>
             <div className="flex flex-col items-center justify-center md:flex-row flex-wrap gap-4 mt-4 w-full">
               {
                 prediction.data.map((item, index) => (
@@ -95,6 +95,13 @@ export default function Home() {
               }
             </div>
           </div>
+        </div>
+      }
+
+      {
+        prediction && prediction.error === 'false' &&
+        <div className="flex items-center justify-center">
+          <span className="text-sm text-red-500 dark:text-red-400">Unidentified food</span>
         </div>
       }
 
