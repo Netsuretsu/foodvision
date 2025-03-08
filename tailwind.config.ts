@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        "foodvision-primary": "#FF0000",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
